@@ -191,16 +191,22 @@ To execute tests:
 npm test
 ```
 
-##🔒 Security
+## 🔒 Security
 
-This project uses environment variables for sensitive configuration.
+This project uses environment variables to protect sensitive configuration and credentials.
 
-Do not commit:
+## 🔒 Security
 
-Gemini API keys
-MongoDB passwords
-JWT secrets
-.env files
-Private credentials
+Sensitive credentials are managed using environment variables.
 
-Use .env.example when sharing the project configuration structure.
+Never commit the following files or information to GitHub:
+
+- Gemini API keys
+- MongoDB passwords or connection strings
+- JWT secrets
+- `.env` files
+- Private API credentials
+
+The `.env` file is excluded from Git using `.gitignore`.
+
+For sharing the required environment variable structure, use `.env.example` with placeholder values only.
