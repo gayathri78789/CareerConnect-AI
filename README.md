@@ -191,6 +191,7 @@ To execute tests:
 npm test
 ```
 
+---
 ## 🔒 Security
 
 This project uses environment variables to protect sensitive configuration and credentials.
