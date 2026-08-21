@@ -1,0 +1,30 @@
+/* =============================================================================
+   STYLES INDEX — Import order matters for cascade correctness
+   ============================================================================= */
+
+/* 1. Design tokens — must be first */
+@import './variables.css';
+
+/* 2. Animations — referenced by components */
+@import './animations.css';
+
+/* 3. Reset + base typography */
+@import './base.css';
+
+/* 4. App shell layout */
+@import './layout.css';
+
+/* 5. Reusable components */
+@import './components.css';
+
+/* 6. Page-specific styles */
+@import './pages/landing.css';
+@import './pages/dashboard.css';
+@import './pages/profile.css';
+@import './pages/resume.css';
+@import './pages/jd-analyzer.css';
+@import './pages/roadmap.css';
+@import './pages/practice.css';
+@import './pages/interview.css';
+@import './pages/chat.css';
+@import './pages/admin.css';

@@ -1,0 +1,81 @@
+/* =============================================================================
+   VARIABLES — Single source of truth for all design tokens & themes
+   ============================================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* ── Light Theme Tokens ── */
+  --bg:           #ffffff;
+  --bg-secondary: #f8fafc;
+  --panel:        #ffffff;
+  --panel-strong: #ffffff;
+  --panel-muted:  #f8fafc;
+  --text:         #0f172a;
+  --heading:      #0f172a;
+  --muted:        #64748b;
+  --border:       #e2e8f0;
+  --stroke:       #e2e8f0;
+  --stroke-soft:  rgba(226, 232, 240, 0.7);
+  --primary:      #2563eb;
+  --blue:         #2563eb;
+  --blue-soft:    rgba(37, 99, 235, 0.1);
+
+  /* ── Brand & Extended Accents ── */
+  --violet:      #6154f6;
+  --violet-soft: rgba(97, 84, 246, 0.12);
+  --sky:         #256cf0;
+  --sky-soft:    rgba(37, 108, 240, 0.1);
+  --slate:       #44506a;
+  --slate-soft:  rgba(68, 80, 106, 0.12);
+  --green:       #16a34a;
+  --green-soft:  #dcfce7;
+  --amber:       #b86a00;
+  --amber-soft:  #fff4cc;
+  --gray:        #475467;
+  --gray-soft:   #eef1f5;
+  --danger:      #d92d20;
+  --danger-soft: #fff0ef;
+  --mint:        #57f29f;
+  --dark:        #171a20;
+
+  /* ── Extended Slate Scale ── */
+  --slate-900:   #0f172a;
+  --slate-800:   #1e293b;
+  --slate-700:   #334155;
+  --slate-600:   #475569;
+  --slate-500:   #64748b;
+  --slate-400:   #94a3b8;
+  --slate-300:   #cbd5e1;
+  --slate-200:   #e2e8f0;
+  --slate-100:   #f1f5f9;
+  --slate-50:    #f8fafc;
+
+  /* ── Blue Scale ── */
+  --blue-700:    #1d4ed8;
+  --blue-600:    #2563eb;
+  --blue-500:    #3b82f6;
+
+  /* ── Shadows ── */
+  --shadow-card:   0 10px 28px rgba(15, 23, 42, 0.055);
+  --shadow-button: 0 8px 18px rgba(37, 99, 235, 0.2);
+
+  /* ── Border Radius ── */
+  --radius-xl:   20px;
+  --radius-lg:   16px;
+  --radius-md:   12px;
+  --radius-sm:   8px;
+  --radius-xs:   6px;
+  --radius-full: 999px;
+
+  /* ── Transitions ── */
+  --t-fast:   all 0.15s ease;
+  --t-normal: all 0.18s ease;
+  --t-slow:   all 0.2s ease;
+}
+
+/* Root global background and text colors */
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+}

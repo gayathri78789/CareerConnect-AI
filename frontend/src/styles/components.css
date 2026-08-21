@@ -1,0 +1,827 @@
+/* =============================================================================
+   COMPONENTS — Shared UI: buttons, card, panel, pill, modal, table, toggle,
+                 tag, stat-card, avatar, progress, search, empty-state, toast
+   ============================================================================= */
+
+/* ── Card ── */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  color: var(--text);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── Card variants shared with feature/pricing/mini-stat etc. ── */
+.feature-card,
+.pricing-card,
+.mini-stat,
+.metric-panel,
+.step-card,
+.theme-card,
+.suggestion-card {
+  border-radius: 1.8rem;
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+  box-shadow: var(--shadow-card);
+  color: var(--text);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── Panel ── */
+.panel,
+.stat-card {
+  padding: 1.15rem;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-xl);
+  color: var(--text);
+}
+
+.panel--table { padding: 0; overflow: hidden; }
+
+.panel__header,
+.panel__footer,
+.resource-panel__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+.panel__header  { padding-bottom: 0.75rem; }
+.panel__footer  { padding-top: 1rem; }
+.panel__subhead { margin-top: 1.5rem; }
+.panel__actions { display: flex; gap: 0.55rem; padding-top: 1rem; flex-wrap: wrap; }
+.panel__actions--end { justify-content: flex-end; }
+
+/* ── Buttons — shared transition basis ── */
+.ghost-button,
+.primary-button,
+.pager-button,
+.system-card__button,
+.icon-button,
+.dashed-button,
+.text-button,
+.marketing-link,
+.oauth-button,
+.auth-toggle__item,
+.chip-action,
+.settings-tab,
+.icon-circle,
+.primary-square {
+  border: 0;
+  transition: var(--t-normal);
+}
+
+.ghost-button,
+.primary-button {
+  min-height: 44px;
+  padding: 0.65rem 1.4rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.ghost-button {
+  background: var(--panel);
+  color: var(--heading);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+.ghost-button:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+}
+.ghost-button--inverse { background: rgba(255, 255, 255, 0.12); color: #fff; border-color: rgba(255, 255, 255, 0.18); box-shadow: none; }
+
+.primary-button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff !important;
+  border: none;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+}
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.48);
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+.primary-button--full,
+.ghost-button--full { width: 100%; }
+
+/* ── Marketing Header Sign In & Get Started buttons ── */
+.header-signin-btn {
+  padding: 0.55rem 1.25rem;
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid var(--stroke);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+.header-signin-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.header-signup-btn {
+  padding: 0.55rem 1.35rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+}
+.header-signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+.ghost-button:hover,
+.primary-button:hover,
+.pager-button:hover,
+.resource-item:hover,
+.system-card__button:hover,
+.icon-circle:hover,
+.chip-action:hover,
+.icon-button:hover { transform: translateY(-1px); }
+
+.text-button { padding: 0; background: transparent; color: var(--primary); font-weight: 800; border: none; cursor: pointer; }
+
+.icon-circle,
+.avatar-chip,
+.icon-button,
+.pager-button,
+.primary-square {
+  width: 2.6rem;
+  height: 2.6rem;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  color: var(--heading);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.icon-circle { border-radius: 50%; }
+.icon-circle:hover,
+.icon-button:hover,
+.pager-button:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+.icon-circle--active,
+.avatar-chip--active { color: var(--primary); border-color: var(--primary); }
+
+.avatar-chip { width: 2.45rem; height: 2.45rem; padding: 0; border-radius: 50%; overflow: hidden; display: inline-grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+.avatar-chip-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.primary-square { background: var(--primary); color: #fff; box-shadow: var(--shadow-button); }
+
+/* ── Toggle Switch & Responsive Row Styles ── */
+.toggle {
+  width: 48px;
+  height: 26px;
+  min-height: 26px;
+  border-radius: 13px;
+  background: var(--stroke);
+  position: relative;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+}
+.toggle span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+.toggle--on {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+.toggle--on span {
+  transform: translateX(22px);
+}
+.toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--stroke);
+}
+.toggle-row:last-child {
+  border-bottom: none;
+}
+.toggle-row strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--heading);
+  font-weight: 700;
+}
+.toggle-row p {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.sidebar-close-btn {
+  display: none;
+  background: var(--bg-secondary);
+  border: 1px solid var(--stroke);
+  color: var(--muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--t-normal);
+}
+.sidebar-close-btn:hover {
+  background: var(--stroke);
+  color: var(--heading);
+}
+
+@media (max-width: 1024px) {
+  .sidebar-close-btn {
+    display: inline-flex;
+  }
+}
+
+.dashed-button {
+  width: 100%;
+  margin-top: 1.5rem;
+  min-height: 3rem;
+  border-radius: 1rem;
+  border: 2px dashed var(--stroke);
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* ── Pill ── */
+.pill {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: var(--blue-soft);
+  color: var(--primary);
+  font-weight: 700;
+}
+.pill--inverse { background: rgba(255, 255, 255, 0.12); color: #fff; }
+
+/* ── Chip ── */
+.pricing-badge,
+.chip,
+.status-pill,
+.tag { display: inline-flex; align-items: center; gap: 0.35rem; border-radius: var(--radius-full); font-weight: 700; }
+
+.chip-action,
+.chip { padding: 0.65rem 1rem; border: 1px solid var(--stroke); background: var(--panel); color: var(--text); border-radius: var(--radius-full); }
+.chip--blue { border-color: var(--primary); color: var(--primary); background: var(--blue-soft); }
+
+/* ── Progress Bar ── */
+.progress {
+  margin-top: 0.7rem;
+  height: 0.34rem;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+.progress--tall { height: 0.6rem; }
+.progress__fill { display: block; height: 100%; border-radius: inherit; }
+.progress__fill--blue   { background: linear-gradient(90deg, #1e50eb, #1444d4); }
+.progress__fill--violet { background: linear-gradient(90deg, #6154f6, #463cf0); }
+.progress__fill--slate  { background: linear-gradient(90deg, #4b5565, #364152); }
+.progress__fill--sky    { background: linear-gradient(90deg, #256cf0, #1b56e6); }
+
+/* ── Tag ── */
+.tag { padding: 0.55rem 0.85rem; background: var(--bg-secondary); color: var(--text); }
+.tag--alert { background: var(--danger-soft); color: var(--danger); }
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+/* ── Status Pill ── */
+.status-pill { padding: 0.38rem 0.7rem; font-size: 0.95rem; }
+.status-pill__dot { width: 0.42rem; height: 0.42rem; border-radius: var(--radius-full); background: currentColor; }
+.status-pill--green { color: #16a34a; background: var(--green-soft); }
+.status-pill--amber { color: var(--amber); background: var(--amber-soft); }
+.status-pill--gray  { color: var(--muted); background: var(--gray-soft); }
+
+/* ── Avatar ── */
+.avatar { width: 2.35rem; height: 2.35rem; display: grid; place-items: center; border-radius: var(--radius-full); font-weight: 800; font-size: 0.95rem; }
+.avatar--blue   { color: var(--primary); background: var(--blue-soft); }
+.avatar--violet { color: var(--violet); background: var(--violet-soft); }
+.avatar--slate  { color: var(--muted);  background: var(--slate-soft); }
+
+.profile-card__avatar,
+.admin-card__avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #1945d7, #6154f6);
+}
+
+/* ── Avatar Stack ── */
+.avatar-stack { display: flex; }
+.avatar-stack span { width: 2rem; height: 2rem; margin-left: -0.45rem; border-radius: var(--radius-full); border: 2px solid var(--bg); background: linear-gradient(135deg, #dbe7ff, #c8d3ff); }
+.avatar-stack span:first-child { margin-left: 0; }
+
+/* ── Search ── */
+.search {
+  min-width: min(100%, 21rem);
+  height: 2.9rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--stroke);
+  border-radius: 0.95rem;
+  color: var(--text);
+}
+.search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); }
+
+/* ── Auth fields / textarea focus states ── */
+.auth-fields input:focus,
+.search input:focus,
+.large-textarea:focus,
+.chat-input textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--blue-soft);
+}
+
+/* ── Settings Tabs Container ── */
+.settings-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--panel);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  margin-bottom: 1.75rem;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.settings-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  min-height: 42px;
+}
+
+.settings-tab svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.settings-tab:hover {
+  color: var(--heading);
+  background: var(--bg-secondary);
+}
+.settings-tab:hover svg {
+  color: var(--primary);
+}
+
+.settings-tab--active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  border-color: transparent !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.settings-tab--active svg {
+  color: #ffffff !important;
+}
+
+/* ── Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  padding: 1rem max(1rem, var(--sal, 0px)) calc(1rem + var(--sab, 0px)) max(1rem, var(--sar, 0px));
+}
+.modal-box {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 1.75rem;
+  width: min(520px, 92vw);
+  max-height: calc(88vh - var(--sab, 0px));
+  max-height: calc(88dvh - var(--sab, 0px));
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  animation: modalScaleUp 0.22s ease;
+}
+.modal-box h3 { font-size: 1.2rem; font-weight: 700; color: var(--heading); margin: 0 0 1.25rem 0; }
+.modal-box label { display: block; margin-bottom: 1rem; }
+.modal-box label span { display: block; font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--t-fast);
+  background: var(--bg-secondary);
+  color: var(--text);
+}
+.modal-box input:focus,
+.modal-box textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--blue-soft); background: var(--panel); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+    width: 95vw;
+  }
+}
+
+/* ── Table ── */
+.table-wrap    { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; max-width: 100%; display: block; }
+.user-table, .invoice-table    { width: 100%; border-collapse: collapse; min-width: 520px; }
+.user-table thead th { padding: 1rem 1.15rem; text-align: left; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: var(--bg-secondary); border-bottom: 1px solid var(--stroke); }
+.user-table tbody td { padding: 1rem 1.15rem; color: var(--text); border-top: 1px solid var(--stroke); }
+.user-cell     { display: flex; align-items: center; gap: 0.75rem; }
+.user-cell__name  { color: var(--heading); font-size: 0.95rem; font-weight: 600; }
+.user-cell__email { margin-top: 0.15rem; color: var(--muted); font-size: 0.82rem; }
+.table-link    { color: var(--primary); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .user-table thead th,
+  .user-table tbody td {
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+/* ── Empty State / Not Found ── */
+.empty-state,
+.not-found { text-align: center; display: grid; gap: 1rem; place-items: center; color: var(--text); }
+.not-found { padding: 2rem; max-width: 36rem; margin: 0 auto; }
+.not-found svg,
+.empty-state svg { width: 2.5rem; height: 2.5rem; color: var(--primary); }
+
+/* ── Toast / Profile Toast ── */
+.profile-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 0.92rem;
+  animation: slideInDown 0.3s ease;
+}
+
+/* ── Checkbox ── */
+.checkbox { width: 1.4rem; height: 1.4rem; border-radius: 0.4rem; border: 2px solid var(--primary); display: inline-grid; place-items: center; }
+.checkbox--done { background: var(--blue-soft); }
+
+/* ── Section Head ── */
+.section-head      { text-align: center; margin-bottom: 2rem; }
+.section-head--left { text-align: left; }
+.section-head h2   { font-size: clamp(1.75rem, 3vw, 2.4rem); color: var(--heading); }
+
+/* ── Outline Row ── */
+.outline-row {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: 1px dashed var(--stroke);
+  color: var(--muted);
+}
+
+/* ── Divider ── */
+.divider { display: flex; align-items: center; gap: 1rem; margin: 1.3rem 0; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.76rem; font-weight: 700; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--stroke); }
+
+/* ── Pricing Badge ── */
+.pricing-badge { position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%); padding: 0.35rem 0.8rem; background: var(--primary); color: #fff; font-size: 0.76rem; }
+
+/* ── Form Error ── */
+.form-error,
+.analysis-results__hint { margin: 0; color: var(--danger); font-size: 0.9rem; }
+.analysis-results__hint { margin-bottom: 1rem; }
+
+/* ── Settings Billing Tab ── */
+.settings-billing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.billing-plan-card,
+.billing-payment-card {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.plan-card-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.billing-cycle-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--panel);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  margin: 0 auto 1.75rem auto;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.cycle-btn {
+  padding: 0.55rem 1.15rem;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 40px;
+}
+
+.cycle-btn:hover {
+  color: var(--heading);
+  background: var(--bg-secondary);
+}
+
+.cycle-btn--active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.32);
+}
+
+.discount-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 1.85rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.pricing-card--popular {
+  border: 2px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.85rem;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.pricing-card__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--heading);
+  margin: 0 0 0.4rem 0;
+}
+
+.pricing-card__desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+  min-height: 2.5rem;
+}
+
+.pricing-card__price {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--heading);
+  line-height: 1;
+  margin: 0 0 1.25rem 0;
+}
+.pricing-card__price span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.86rem;
+  color: var(--text);
+}
+
+.pricing-features li svg {
+  width: 17px;
+  height: 17px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.invoice-table th {
+  background: var(--bg-secondary);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.invoice-table td {
+  padding: 1rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+.invoice-table tr:last-child td {
+  border-bottom: none;
+}

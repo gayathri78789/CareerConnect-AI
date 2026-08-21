@@ -1,0 +1,1 @@
+function e(e){let t=Math.floor(e/60),n=e%60;return`${t}:${n<10?`0`:``}${n}`}function t(e,t=2){return(e||``).trim().split(` `).map(e=>e[0]).filter(Boolean).join(``).slice(0,t).toUpperCase()}export{t as n,e as t};
