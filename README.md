@@ -1,61 +1,134 @@
-# CareerPrep - AI Career & Preparation Platform
+# CareerConnect AI – AI Career & Preparation Platform
 
-CareerPrep is an AI-driven career preparation platform designed to help candidates prepare for technical interviews, optimize resumes for ATS compatibility, map career growth paths, and track daily readiness metrics. Built with a modern full-stack architecture featuring React, Vite, Node.js, Express, and MongoDB.
+CareerConnect AI is a full-stack AI-powered career preparation platform designed to help students and job seekers prepare for technical interviews, improve resumes, analyze job descriptions, practice coding and aptitude questions, and build personalized career roadmaps.
+
+The application is built using React, Vite, Node.js, Express, MongoDB, and Google's Gemini AI.
 
 ---
 
 ## 🚀 Key Features
 
-- 👤 **Dynamic Authentication & Global Session Management**: JWT token authentication with `AuthContext` state management, automatic session restoration via `GET /api/auth/me`, and protected route guards.
-- 📊 **Database-Driven Dashboard**: Zero-state career readiness scoring, coding XP tracking, interview ranking, and real-time weekly activity graphs calculated per user.
-- 📄 **ATS Resume Builder & Optimizer**: Live ATS scoring, keyword gap analysis, and AI suggestions for resume bullet formatting using Google's X-Y-Z formula.
-- 🤖 **Interactive AI Coach**: Conversational coach providing guidance on STAR interview technique, recruiter salary negotiations, and skill gaps.
-- 🗺️ **Custom Career Roadmap**: Automated generation of milestone timelines and focus areas tailored to target roles and target companies.
-- 🎯 **Job Description (JD) Analyzer**: Match score analysis against target job postings with actionable skill recommendations.
-- 💡 **Practice Drills & Coding Arena**: Timed contest drills, data structures, and quantitative aptitude sets that update user XP dynamically.
-- 👤 **Profile & Settings Management**: Dynamic user brand settings, verified skills list, theme toggle (Light/Dark/System), and notification preferences.
+- 🔐 **User Authentication**
+  - User registration and login
+  - JWT-based authentication
+  - Protected user sessions
+
+- 📊 **Career Dashboard**
+  - Career readiness overview
+  - Practice progress
+  - Interview preparation tracking
+  - Activity history
+
+- 📄 **AI Resume Builder**
+  - Build and update resumes
+  - Resume optimization
+  - ATS-focused suggestions
+  - Resume improvement recommendations
+
+- 🤖 **AI Career Coach**
+  - Interactive AI-powered career guidance
+  - Interview preparation
+  - Career-related questions and suggestions
+  - Personalized learning guidance
+
+- 🗺️ **Career Roadmap**
+  - Personalized career roadmap
+  - Target role-based milestones
+  - Skill development guidance
+
+- 🎯 **Job Description Analyzer**
+  - Analyze job descriptions
+  - Identify required skills
+  - Compare skills with career goals
+  - Provide improvement suggestions
+
+- 💻 **Coding Practice**
+  - Coding questions
+  - Topic-based practice
+  - Coding history
+  - Practice statistics
+
+- 🧠 **Aptitude Practice**
+  - Quantitative aptitude questions
+  - Practice sessions
+  - Randomized questions
+
+- 🎤 **Mock Interviews**
+  - Practice interview sessions
+  - Interview questions
+  - AI-based interview evaluation
+  - Interview reports
+
+- 👤 **Profile & Settings**
+  - User profile management
+  - Career preferences
+  - Application settings
+  - Notification management
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- CSS
+- Context API
+
+### Backend
+
+- Node.js
+- Express.js
+- CORS
+- JWT Authentication
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### AI
+
+- Google Gemini API
+
+### Development Tools
+
+- npm
+- Git
+- GitHub
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-CareerPrep/
+CareerConnect-AI/
+│
 ├── backend/
-│   ├── controllers/       # Controller handlers mapping routes to data store calls
-│   │   └── controller.js
-│   ├── data/              # Database storage layer and unit/integration tests
-│   │   ├── store.js       # Multi-tenant user data isolation & zero-state store
-│   │   ├── store.test.js  # Store unit tests
-│   │   └── db.json        # Persistent local JSON data fallback
-│   ├── middleware/        # Bearer token and user identity extraction middleware
-│   │   └── authMiddleware.js
-│   ├── models/            # Mongoose database models (User, Analytics, Profile, etc.)
-│   │   └── index.js
-│   ├── routes/            # Express REST API routes and automated integration tests
-│   │   ├── apiRoutes.js
-│   │   └── apiRoutes.test.js
-│   └── server.js          # Express server entry point (Port 3001)
+│   ├── controllers/
+│   ├── data/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   └── server.js
+│
 ├── frontend/
-│   ├── src/               # React SPA components and page layouts
-│   │   ├── components/    # Reusable UI icons & layout modules
-│   │   └── App.jsx        # AuthProvider, AppShell, Router, and Page views
-│   ├── index.html         # Application HTML root template
-│   └── vite.config.js     # Vite configuration
-├── src/                   # Synced frontend source directory
-├── .env                   # Environment variables configuration
-├── package.json           # npm scripts and dependency manifest
-└── README.md              # Project documentation
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── App.jsx
+│   └── index.html
+│
+├── package.json
+├── vite.config.js
+├── .env
+└── README.md
 ```
 
----
-
-## 🛠️ Technology Stack
-
-- **Frontend**: React 18, Vite, Vanilla CSS (Dark mode, glassmorphism, dynamic animations), Context API State Management.
-- **Backend**: Node.js, Express, CORS, Custom Auth Middleware, Base64 JWT Tokens.
-- **Database**: MongoDB (via Mongoose) with isolated per-user JSON fallback persistence.
-- **Test Runner**: Native Node.js Test Suite (`node --test`).
 
 ---
 
@@ -75,9 +148,10 @@ CareerPrep/
 
 2. Configure environment variables in `.env`:
    ```env
-   PORT=3001
-   MONGODB_URI=mongodb://localhost:27017/careerprep
-   VITE_API_URL=http://localhost:3001/api
+    PORT=3001
+    GEMINI_API_KEY=your_gemini_api_key
+    MONGODB_URI=your_mongodb_connection_string
+    VITE_API_URL=http://localhost:3001/api
    ```
 
 ### Execution Scripts
@@ -116,3 +190,17 @@ To execute tests:
 ```bash
 npm test
 ```
+
+##🔒 Security
+
+This project uses environment variables for sensitive configuration.
+
+Do not commit:
+
+Gemini API keys
+MongoDB passwords
+JWT secrets
+.env files
+Private credentials
+
+Use .env.example when sharing the project configuration structure.
