@@ -49,10 +49,10 @@ export function SidebarShell({ isOpen: propIsOpen, onClose: propOnClose }) {
             style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', cursor: 'pointer' }}
           >
             <div className="brand__mark brand__mark--img">
-              <img src="/logo.png" alt="CareerPrep Logo" className="brand__logo-img" />
+              <img src="/logo.png" alt="CareerConnect Logo" className="brand__logo-img" />
             </div>
             <div>
-              <h1>CareerPrep</h1>
+              <h1>CareerConnect</h1>
               <div className="brand__meta">
                 <span>AI Career</span>
                 <span className="brand__badge">LIVE</span>

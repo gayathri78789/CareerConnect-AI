@@ -5,7 +5,7 @@ export const appNav = [
   { label: 'JD Analyzer', path: '/jd-analyzer', icon: 'analytics' },
   { label: 'Roadmap', path: '/roadmap', icon: 'roadmap' },
   { label: 'Practice', path: '/practice', icon: 'code' },
-  { label: 'AI Coach', path: '/coach', icon: 'chat' },
+  { label: 'CareerConnect AI Coach', path: '/coach', icon: 'chat' },
 ];
 
 export const marketingLinks = [

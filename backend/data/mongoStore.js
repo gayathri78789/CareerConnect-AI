@@ -243,7 +243,7 @@ export async function registerUser({ name, email, password }) {
 
   const userId = newUser._id.toString();
   await ensureUserInitialized(userId, name, email.toLowerCase());
-  await logActivity(userId, 'Account Registered', 'Welcome to CareerPrep!', 'mint');
+  await logActivity(userId, 'Account Registered', 'Welcome to CareerConnect!', 'mint');
 
   return {
     id: userId,
