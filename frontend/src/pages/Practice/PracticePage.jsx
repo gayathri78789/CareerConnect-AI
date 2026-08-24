@@ -100,7 +100,7 @@ export default function PracticePage() {
         <header className="practice-header-container">
           <div className="practice-top-row">
             <div className="career-badge-section">
-              <h1 className="brand-header-logo">CareerPrep Practice</h1>
+              <h1 className="brand-header-logo">CareerConnect Practice</h1>
               
               {/* CAREER TRACK BADGE */}
               <button
