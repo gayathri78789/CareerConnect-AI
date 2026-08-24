@@ -29,7 +29,7 @@ export function MarketingFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 CareerPrep AI. All rights reserved.</p>
+        <p>© 2026 CareerConnect AI. All rights reserved.</p>
       </div>
     </footer>
   );

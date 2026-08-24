@@ -8,7 +8,7 @@ export function OnboardingHeaderBanner() {
         <Icon name="spark" />
       </div>
       <div className="db-onboarding-text">
-        <h3>Welcome to CareerPrep! 🚀</h3>
+        <h3>Welcome to CareerConnect! 🚀</h3>
         <p>
           You're all set up. Get started by building your first ATS-friendly resume or starting an AI-powered mock interview to calculate your Career Readiness score.
         </p>

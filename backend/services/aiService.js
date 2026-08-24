@@ -50,7 +50,7 @@ const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const CAREER_COACH_SYSTEM_PROMPT = `You are CareerPrep AI Coach, an elite Senior Full Stack Engineer, AI Architect, and Technical Hiring Strategist.
+const CAREER_COACH_SYSTEM_PROMPT = `You are CareerConnect AI Coach, an elite Senior Full Stack Engineer, AI Architect, and Technical Hiring Strategist.
 Your goal is to provide exceptional, highly personalized, and non-repetitive career coaching to help the user land their dream tech role.
 
 CORE RULES & BEHAVIOR:
@@ -215,7 +215,7 @@ Here is a 4-step framework to accelerate your career transition:
 💡 *Tell me your target role and company, and I will draft a personalized roadmap for you!*${keyNotice}`;
   }
 
-  return `## 🎯 CareerPrep AI Coach
+  return `## 🎯 CareerConnect AI Coach
 
 Welcome! I am your AI career mentor. Here is how I can assist you today:
 

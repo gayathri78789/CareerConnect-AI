@@ -27,7 +27,7 @@ export function ChatHeader({
         </div>
         <div>
           <div className="chat-header__title-row">
-            <h1 className="chat-header__title">CareerPrep AI Coach</h1>
+            <h1 className="chat-header__title">CareerConnect AI Coach</h1>
           </div>
           <span className="chat-header__subtitle">AI Career Architect & Interview Mentor</span>
         </div>

@@ -214,7 +214,7 @@ export function ChatInput({ onSend, isStreaming, onStop }) {
 
       <div className="chat-disclaimer">
         <span className="chat-disclaimer-icon">ⓘ</span>
-        <span>CareerPrep AI Coach can make mistakes. Verify important career information &amp; document analysis.</span>
+        <span>CareerConnect AI Coach can make mistakes. Verify important career information &amp; document analysis.</span>
       </div>
     </div>
   );
