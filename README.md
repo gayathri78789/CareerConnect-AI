@@ -212,4 +212,4 @@ For sharing the required environment variable structure, use `.env.example` with
 
 # CareerConnect AI
 
-[🚀 **Live Demo**](https://careerconnect-backend-gj08.onrender.com)
+[🚀 **Live Demo**](https://careerconnect-ai-web.onrender.com)
