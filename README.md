@@ -208,3 +208,8 @@ Never commit the following files or information to GitHub:
 The `.env` file is excluded from Git using `.gitignore`.
 
 For sharing the required environment variable structure, use `.env.example` with placeholder values only.
+
+
+# CareerConnect AI
+
+[🚀 **Live Demo**](https://careerconnect-ai-1.onrender.com)
