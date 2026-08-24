@@ -58,7 +58,7 @@ export function MessageBubble({ message, userInitials, isLast, onRegenerate }) {
 
       <div className="message-content-wrapper">
         <div className="message-header-meta">
-          <span className="message-author">{isUser ? 'You' : 'CareerPrep AI Coach'}</span>
+          <span className="message-author">{isUser ? 'You' : 'CareerConnect AI Coach'}</span>
           <span className="message-time">{message.time || 'Just now'}</span>
         </div>
 
